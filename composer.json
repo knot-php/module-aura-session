@@ -1,0 +1,36 @@
+{
+  "name": "knot-php/module-aura-session",
+  "description": "auraphp/Aura.Session installer modules",
+  "keywords": ["PHP","Module","Installer","kNot Framework","Aura.Session","Aura for PHP"],
+  "homepage": "https://github.com/knot-php/module-aura-session",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Katsuki Shuto",
+      "email": "stk2k@knot-framework.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "aura/session": "~2.0",
+    "knot-lib/kernel": "~0.1",
+    "knot-lib/module": "~0.1",
+    "knot-lib/support": "~0.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.3.0",
+    "php-coveralls/php-coveralls": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "KnotPhp\\Module\\AuraSession\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "KnotPhp\\Module\\AuraSession\\Test\\": "test/include/",
+      "KnotPhp\\Module\\AuraSession\\Demo\\": "demo/include/"
+    }
+  }
+}
