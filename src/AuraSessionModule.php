@@ -1,20 +1,20 @@
-<?php
+<?php /** @noinspection PhpUnused */
 declare(strict_types=1);
 
 namespace KnotPhp\Module\AuraSession;
 
+use KnotLib\Kernel\Module\AbstractModule;
 use Throwable;
 
 use KnotLib\Kernel\Kernel\ApplicationInterface;
 use KnotLib\Kernel\Exception\ModuleInstallationException;
 use KnotLib\Kernel\EventStream\Channels;
 use KnotLib\Kernel\EventStream\Events;
-use KnotLib\Kernel\Module\ComponentModule;
-use KnotLib\Kernel\Module\Components;
+use KnotLib\Kernel\Module\ComponentTypes;
 use KnotPhp\Module\AuraSession\Adapter\AuraSessionAdapter;
 use KnotPhp\Module\AuraSession\Adapter\ExtendedSessionFactory;
 
-class AuraSessionModule extends ComponentModule
+class AuraSessionModule extends AbstractModule
 {
     /**
      * Declare dependent on components
@@ -24,7 +24,7 @@ class AuraSessionModule extends ComponentModule
     public static function requiredComponents() : array
     {
         return [
-            Components::EVENTSTREAM,
+            ComponentTypes::EVENTSTREAM,
         ];
     }
 
@@ -35,7 +35,7 @@ class AuraSessionModule extends ComponentModule
      */
     public static function declareComponentType() : string
     {
-        return Components::SESSION;
+        return ComponentTypes::SESSION;
     }
 
     /**
