@@ -5,7 +5,7 @@ namespace KnotPhp\Module\AuraSession;
 
 use Throwable;
 
-use KnotLib\Kernel\Module\AbstractModule;
+use KnotLib\Kernel\Module\ModuleInterface;
 use KnotLib\Kernel\Kernel\ApplicationInterface;
 use KnotLib\Kernel\Exception\ModuleInstallationException;
 use KnotLib\Kernel\EventStream\Channels;
@@ -14,14 +14,24 @@ use KnotLib\Kernel\Module\ComponentTypes;
 use KnotPhp\Module\AuraSession\Adapter\AuraSessionAdapter;
 use KnotPhp\Module\AuraSession\Adapter\ExtendedSessionFactory;
 
-class AuraSessionModule extends AbstractModule
+class AuraSessionModule implements ModuleInterface
 {
+    /**
+     * Declare dependency on another modules
+     *
+     * @return array
+     */
+    public static function requiredModules() : array
+    {
+        return [];
+    }
+
     /**
      * Declare dependent on components
      *
      * @return array
      */
-    public static function requiredComponents() : array
+    public static function requiredComponentTypes() : array
     {
         return [
             ComponentTypes::EVENTSTREAM,
