@@ -1,12 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotPhp\Module\AuraSession\Adapter;
+namespace knotphp\module\aurasession\adapter;
 
 use Aura\Session\Session;
 
-use KnotLib\Kernel\Session\SessionInterface;
-use KnotLib\Kernel\Session\SessionBucketInterface;
+use KnotLib\Kernel\NullObject\NullSessionBucket;
+use knotlib\kernel\session\SessionInterface;
+use knotlib\kernel\session\SessionBucketInterface;
 
 class AuraSessionAdapter implements SessionInterface
 {
@@ -65,7 +66,7 @@ class AuraSessionAdapter implements SessionInterface
         /** @var ExtendedSegment $segment */
         $segment = $this->session->getSegment($name);
         if (!$segment) {
-            return null;
+            return new NullSessionBucket();
         }
         return new AuraSessionBucketAdapter($segment);
     }

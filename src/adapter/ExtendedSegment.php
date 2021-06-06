@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotPhp\Module\AuraSession\Adapter;
+namespace knotphp\module\aurasession\adapter;
 
 use Aura\Session\Segment;
 

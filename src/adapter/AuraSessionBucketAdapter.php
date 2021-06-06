@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotPhp\Module\AuraSession\Adapter;
+namespace knotphp\module\aurasession\adapter;
 
-use KnotLib\Kernel\Session\SessionBucketInterface;
+use knotlib\kernel\session\SessionBucketInterface;
 
 class AuraSessionBucketAdapter implements SessionBucketInterface
 {
